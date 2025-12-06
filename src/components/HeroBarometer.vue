@@ -201,34 +201,21 @@
   };
   </script>
   
-  <style scoped>
-  @keyframes shimmer {
-    0% {
-      transform: translateX(-100%);
-    }
-    100% {
-      transform: translateX(100%);
-    }
-  }
-  
-  .animate-shimmer {
-    animation: shimmer 2s infinite;
-  }
-  
-  /* Smooth cross-fade */
-  .fade-enter-active,
-  .fade-leave-active {
-    transition: opacity 1.8s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-  
-  .fade-enter-from,
-  .fade-leave-to {
-    opacity: 0;
-  }
-  
-  .fade-enter-to,
-  .fade-leave-from {
-    opacity: 1;
-  }
-  </style>
+<style scoped>
+/* Vue transition classes - minimal CSS needed for Vue transitions */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 1.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+.fade-enter-to,
+.fade-leave-from {
+  opacity: 1;
+}
+</style>
   
