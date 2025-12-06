@@ -31,6 +31,9 @@ const handleDonation = (amount) => {
   currentAmount.value += amount
   showThankYou.value = true
   
+  // Scroll to top to show updated barometer
+  window.scrollTo({ top: 0, behavior: 'smooth' })
+  
   // Hide thank you message after 5 seconds
   setTimeout(() => {
     showThankYou.value = false

@@ -11,10 +11,10 @@
       <!-- Spendenbarometer -->
       <div class="bg-white/10 backdrop-blur-sm rounded-lg p-6 md:p-8 mt-8">
         <div class="mb-4">
-          <p class="text-2xl md:text-3xl font-bold mb-2">
+          <p class="text-2xl md:text-3xl font-bold mb-2 transition-all duration-300">
             {{ formatCurrency(currentAmount) }} von {{ formatCurrency(targetAmount) }}
           </p>
-          <p class="text-blue-200 text-sm md:text-base">
+          <p class="text-blue-200 text-sm md:text-base transition-all duration-300">
             {{ Math.round((currentAmount / targetAmount) * 100) }}% des Ziels erreicht
           </p>
         </div>
@@ -22,7 +22,7 @@
         <!-- Progress Bar -->
         <div class="w-full bg-white/20 rounded-full h-6 md:h-8 overflow-hidden">
           <div 
-            class="bg-gradient-to-r from-green-400 to-green-500 h-full rounded-full transition-all duration-500 ease-out flex items-center justify-end pr-2"
+            class="bg-gradient-to-r from-green-400 to-green-500 h-full rounded-full transition-all duration-700 ease-out flex items-center justify-end pr-2"
             :style="{ width: `${Math.min((currentAmount / targetAmount) * 100, 100)}%` }"
           >
             <span v-if="(currentAmount / targetAmount) * 100 > 10" class="text-white text-xs font-semibold">
