@@ -199,14 +199,20 @@ const formatCurrency = (amount) => {
   animation: shimmer 2s infinite;
 }
 
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 2s cubic-bezier(0.4, 0, 0.2, 1);
+.fade-enter-active {
+  transition: opacity 1.5s ease-in;
 }
 
-.fade-enter-from,
-.fade-leave-to {
+.fade-leave-active {
+  transition: opacity 0.5s ease-out;
+}
+
+.fade-enter-from {
   opacity: 0;
+}
+
+.fade-leave-to {
+  opacity: 1;
 }
 </style>
 

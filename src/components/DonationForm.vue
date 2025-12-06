@@ -50,8 +50,8 @@
             id="name"
             v-model="form.name"
             type="text"
-              class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-all duration-300"
-            :class="{ 'border-red-500 focus:ring-red-500 focus:border-red-500': errors.name, 'border-gray-300': !errors.name }"
+              class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-green-500 focus:border-green-500 transition-all duration-300"
+            :class="{ 'border-red-400 focus:ring-red-400 focus:border-red-400': errors.name }"
             placeholder="Ihr vollständiger Name"
             @blur="validateName"
           />
@@ -77,8 +77,8 @@
             id="email"
             v-model="form.email"
             type="email"
-              class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-all duration-300"
-            :class="{ 'border-red-500 focus:ring-red-500 focus:border-red-500': errors.email, 'border-gray-300': !errors.email }"
+              class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-green-500 focus:border-green-500 transition-all duration-300"
+            :class="{ 'border-red-400 focus:ring-red-400 focus:border-red-400': errors.email }"
             placeholder="ihre.email@beispiel.de"
             @blur="validateEmail"
           />
@@ -108,10 +108,10 @@
               :key="quickAmount"
               type="button"
               @click="setQuickAmount(quickAmount)"
-              class="px-4 py-2 border rounded-lg font-semibold transition-all duration-300 hover:scale-105"
+              class="px-4 py-2 border border-gray-300 rounded-lg font-semibold transition-all duration-300 hover:scale-105"
               :class="form.amount === quickAmount 
-                ? 'bg-green-600 text-white border-green-600 shadow-md' 
-                : 'bg-white text-gray-700 border-gray-300 hover:border-green-400 hover:bg-green-50'"
+                ? 'bg-green-600 text-white border-green-500 shadow-md' 
+                : 'bg-white text-gray-700 hover:border-green-400 hover:bg-green-50'"
             >
               {{ quickAmount }} €
             </button>
@@ -125,8 +125,8 @@
               type="number"
               min="5"
               step="0.01"
-              class="w-full pl-10 pr-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-all duration-300"
-              :class="{ 'border-red-500 focus:ring-red-500 focus:border-red-500': errors.amount, 'border-gray-300': !errors.amount }"
+              class="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-green-500 focus:border-green-500 transition-all duration-300"
+              :class="{ 'border-red-400 focus:ring-red-400 focus:border-red-400': errors.amount }"
               placeholder="5.00"
             />
           </div>
