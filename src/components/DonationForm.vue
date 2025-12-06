@@ -17,7 +17,7 @@
       <transition name="slide-down">
         <div 
           v-if="showThankYou"
-          class="mb-6 p-6 bg-gradient-to-r from-green-50 to-emerald-50 border-2 border-green-400 rounded-xl shadow-lg"
+          class="mb-6 p-6 bg-gradient-to-r from-green-50 to-emerald-50 border border-green-400 rounded-xl shadow-lg transition-all duration-300"
         >
           <div class="flex items-start">
             <div class="flex-shrink-0">
@@ -50,7 +50,7 @@
             id="name"
             v-model="form.name"
             type="text"
-              class="w-full px-4 py-3 border-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-all"
+              class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-all duration-300"
             :class="{ 'border-red-500 focus:ring-red-500 focus:border-red-500': errors.name, 'border-gray-300': !errors.name }"
             placeholder="Ihr vollständiger Name"
             @blur="validateName"
@@ -77,7 +77,7 @@
             id="email"
             v-model="form.email"
             type="email"
-              class="w-full px-4 py-3 border-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-all"
+              class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-all duration-300"
             :class="{ 'border-red-500 focus:ring-red-500 focus:border-red-500': errors.email, 'border-gray-300': !errors.email }"
             placeholder="ihre.email@beispiel.de"
             @blur="validateEmail"
@@ -108,7 +108,7 @@
               :key="quickAmount"
               type="button"
               @click="setQuickAmount(quickAmount)"
-              class="px-4 py-2 border-2 rounded-lg font-semibold transition-all duration-200 hover:scale-105"
+              class="px-4 py-2 border rounded-lg font-semibold transition-all duration-300 hover:scale-105"
               :class="form.amount === quickAmount 
                 ? 'bg-green-600 text-white border-green-600 shadow-md' 
                 : 'bg-white text-gray-700 border-gray-300 hover:border-green-400 hover:bg-green-50'"
@@ -125,7 +125,7 @@
               type="number"
               min="5"
               step="0.01"
-              class="w-full pl-10 pr-4 py-3 border-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all"
+              class="w-full pl-10 pr-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-all duration-300"
               :class="{ 'border-red-500 focus:ring-red-500 focus:border-red-500': errors.amount, 'border-gray-300': !errors.amount }"
               placeholder="5.00"
             />

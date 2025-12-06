@@ -10,7 +10,7 @@
           class="absolute inset-0 w-full h-full object-cover"
         />
       </transition>
-      <div class="absolute inset-0 bg-gradient-to-br from-green-900/80 via-emerald-800/75 to-teal-900/80"></div>
+      <div class="absolute inset-0 bg-gradient-to-br from-green-900/60 via-emerald-800/55 to-teal-900/60"></div>
     </div>
     
     <!-- Content -->
@@ -36,7 +36,7 @@
         <!-- Donate Now Button -->
         <button
           @click="scrollToDonate"
-          class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white font-bold text-lg rounded-full shadow-2xl transform hover:scale-110 transition-all duration-300 mb-12"
+          class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white font-bold text-lg rounded-full shadow-2xl transform hover:scale-110 transition-all duration-500 ease-in-out mb-12"
         >
           <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
@@ -46,7 +46,7 @@
       </div>
       
       <!-- Enhanced Spendenbarometer -->
-      <div class="bg-white/15 backdrop-blur-xl rounded-3xl p-8 md:p-10 mt-12 shadow-2xl border-2 border-white/30 max-w-5xl mx-auto">
+      <div class="bg-white/15 backdrop-blur-xl rounded-3xl p-8 md:p-10 mt-12 shadow-2xl border border-white/30 max-w-5xl mx-auto transition-all duration-500">
         <!-- Header with Icon -->
         <div class="text-center mb-8">
           <div class="inline-flex items-center justify-center w-16 h-16 bg-green-500/30 rounded-full mb-4">
@@ -93,7 +93,7 @@
         <div class="relative mb-6">
           <div class="w-full bg-white/20 rounded-full h-10 md:h-12 overflow-hidden shadow-inner border border-white/30">
             <div 
-              class="bg-gradient-to-r from-green-400 via-emerald-500 to-teal-500 h-full rounded-full transition-all duration-700 ease-out flex items-center justify-end pr-4 shadow-lg relative overflow-hidden"
+              class="bg-gradient-to-r from-green-400 via-emerald-500 to-teal-500 h-full rounded-full transition-all duration-1000 ease-in-out flex items-center justify-end pr-4 shadow-lg relative overflow-hidden"
               :style="{ width: `${Math.min((currentAmount / targetAmount) * 100, 100)}%` }"
             >
               <!-- Animated shine effect -->
@@ -201,7 +201,7 @@ const formatCurrency = (amount) => {
 
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity 1.5s ease-in-out;
+  transition: opacity 2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .fade-enter-from,
