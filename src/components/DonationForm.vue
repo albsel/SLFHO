@@ -2,15 +2,15 @@
   <section class="py-16 px-4 bg-white">
     <div class="max-w-2xl mx-auto">
       <div class="text-center mb-10">
-        <div class="inline-flex items-center justify-center w-16 h-16 bg-blue-100 rounded-full mb-4">
-          <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <div class="inline-flex items-center justify-center w-16 h-16 bg-green-100 rounded-full mb-4">
+          <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
           </svg>
         </div>
         <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-3">
           Jetzt spenden
         </h2>
-        <p class="text-gray-600 text-lg">Jeder Beitrag zählt und hilft uns, unser Ziel zu erreichen</p>
+        <p class="text-gray-600 text-lg">Jeder Beitrag hilft uns, die Natur zu schützen und zu bewahren</p>
       </div>
 
       <!-- Thank You Message -->
@@ -40,7 +40,7 @@
         <div class="mb-6">
           <label for="name" class="block text-gray-700 font-semibold mb-2">
             <span class="flex items-center">
-              <svg class="w-5 h-5 mr-2 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg class="w-5 h-5 mr-2 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
               </svg>
               Name <span class="text-red-500 ml-1">*</span>
@@ -50,7 +50,7 @@
             id="name"
             v-model="form.name"
             type="text"
-            class="w-full px-4 py-3 border-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all"
+              class="w-full px-4 py-3 border-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-all"
             :class="{ 'border-red-500 focus:ring-red-500 focus:border-red-500': errors.name, 'border-gray-300': !errors.name }"
             placeholder="Ihr vollständiger Name"
             @blur="validateName"
@@ -67,7 +67,7 @@
         <div class="mb-6">
           <label for="email" class="block text-gray-700 font-semibold mb-2">
             <span class="flex items-center">
-              <svg class="w-5 h-5 mr-2 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg class="w-5 h-5 mr-2 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
               </svg>
               E-Mail <span class="text-red-500 ml-1">*</span>
@@ -77,7 +77,7 @@
             id="email"
             v-model="form.email"
             type="email"
-            class="w-full px-4 py-3 border-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all"
+              class="w-full px-4 py-3 border-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-all"
             :class="{ 'border-red-500 focus:ring-red-500 focus:border-red-500': errors.email, 'border-gray-300': !errors.email }"
             placeholder="ihre.email@beispiel.de"
             @blur="validateEmail"
@@ -94,7 +94,7 @@
         <div class="mb-6">
           <label for="amount" class="block text-gray-700 font-semibold mb-3">
             <span class="flex items-center">
-              <svg class="w-5 h-5 mr-2 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg class="w-5 h-5 mr-2 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
               Spendenbetrag (€) <span class="text-red-500 ml-1">*</span>
@@ -110,8 +110,8 @@
               @click="setQuickAmount(quickAmount)"
               class="px-4 py-2 border-2 rounded-lg font-semibold transition-all duration-200 hover:scale-105"
               :class="form.amount === quickAmount 
-                ? 'bg-blue-600 text-white border-blue-600 shadow-md' 
-                : 'bg-white text-gray-700 border-gray-300 hover:border-blue-400 hover:bg-blue-50'"
+                ? 'bg-green-600 text-white border-green-600 shadow-md' 
+                : 'bg-white text-gray-700 border-gray-300 hover:border-green-400 hover:bg-green-50'"
             >
               {{ quickAmount }} €
             </button>
@@ -150,7 +150,7 @@
             <input
               v-model="form.newsletter"
               type="checkbox"
-              class="w-5 h-5 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+              class="w-5 h-5 text-green-600 border-gray-300 rounded focus:ring-green-500"
             />
             <span class="ml-3 text-gray-700">
               Ich möchte den Newsletter erhalten und über aktuelle Projekte informiert werden
@@ -162,7 +162,7 @@
         <button
           type="submit"
           :disabled="isSubmitting"
-          class="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-bold py-4 px-6 rounded-lg transition-all duration-200 shadow-lg hover:shadow-2xl transform hover:scale-[1.02] disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none flex items-center justify-center"
+          class="w-full bg-gradient-to-r from-green-600 to-emerald-700 hover:from-green-700 hover:to-emerald-800 text-white font-bold py-4 px-6 rounded-lg transition-all duration-200 shadow-lg hover:shadow-2xl transform hover:scale-[1.02] disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none flex items-center justify-center"
         >
           <svg v-if="isSubmitting" class="animate-spin -ml-1 mr-3 h-5 w-5 text-white" fill="none" viewBox="0 0 24 24">
             <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>

@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen bg-gradient-to-b from-blue-50 via-white to-gray-50">
+  <div class="min-h-screen bg-gradient-to-b from-green-50 via-white to-gray-50">
     <!-- Hero + Spendenbarometer -->
     <HeroBarometer 
       :current-amount="currentAmount" 

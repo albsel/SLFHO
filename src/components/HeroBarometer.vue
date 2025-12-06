@@ -1,13 +1,13 @@
 <template>
-  <section class="relative bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800 text-white py-20 px-4 overflow-hidden">
+  <section class="relative bg-gradient-to-br from-green-600 via-emerald-700 to-teal-800 text-white py-20 px-4 overflow-hidden">
     <!-- Background Image with Overlay -->
     <div class="absolute inset-0">
       <img 
-        src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
-        alt="Hilfe für Menschen in Not"
+        src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80"
+        alt="Schutz für unsere Natur"
         class="w-full h-full object-cover opacity-20"
       />
-      <div class="absolute inset-0 bg-gradient-to-br from-blue-600/90 via-blue-700/85 to-blue-800/90"></div>
+      <div class="absolute inset-0 bg-gradient-to-br from-green-600/90 via-emerald-700/85 to-teal-800/90"></div>
     </div>
     
     <!-- Decorative background elements -->
@@ -23,15 +23,15 @@
           <div class="mb-6 flex justify-center md:justify-start">
             <div class="inline-flex items-center justify-center w-20 h-20 bg-white/20 backdrop-blur-sm rounded-full">
               <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
               </svg>
             </div>
           </div>
           <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-            Hilfe für Menschen in Not
+            Schutz für unsere Natur
           </h1>
-          <p class="text-xl md:text-2xl mb-8 text-blue-100">
-            Unterstützen Sie unser Projekt für eine bessere Zukunft
+          <p class="text-xl md:text-2xl mb-8 text-green-100">
+            Gemeinsam für eine nachhaltige und grüne Zukunft
           </p>
         </div>
         
@@ -39,11 +39,11 @@
         <div class="hidden md:block">
           <div class="relative rounded-2xl overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-300">
             <img 
-              src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2074&q=80"
-              alt="Gemeinsam helfen wir Menschen in Not"
+              src="https://images.unsplash.com/photo-1472214103451-9374bd1c798e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+              alt="Gemeinsam schützen wir unsere Natur"
               class="w-full h-[400px] object-cover"
             />
-            <div class="absolute inset-0 bg-gradient-to-t from-blue-900/50 to-transparent"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-green-900/50 to-transparent"></div>
           </div>
         </div>
       </div>
@@ -55,12 +55,12 @@
             <p class="text-3xl md:text-4xl font-bold transition-all duration-300">
               {{ formatCurrency(currentAmount) }}
             </p>
-            <p class="text-xl md:text-2xl text-blue-200">von</p>
-            <p class="text-2xl md:text-3xl font-semibold text-blue-200">
+            <p class="text-xl md:text-2xl text-green-200">von</p>
+            <p class="text-2xl md:text-3xl font-semibold text-green-200">
               {{ formatCurrency(targetAmount) }}
             </p>
           </div>
-          <p class="text-blue-200 text-base md:text-lg transition-all duration-300 font-medium">
+          <p class="text-green-200 text-base md:text-lg transition-all duration-300 font-medium">
             {{ Math.round((currentAmount / targetAmount) * 100) }}% des Ziels erreicht
           </p>
         </div>
@@ -80,7 +80,7 @@
         </div>
         
         <!-- Remaining amount -->
-        <p class="text-center text-blue-200 text-sm mt-4">
+        <p class="text-center text-green-200 text-sm mt-4">
           Noch {{ formatCurrency(Math.max(0, targetAmount - currentAmount)) }} bis zum Ziel
         </p>
       </div>
