@@ -17,7 +17,7 @@
         <div
           v-for="(item, index) in faqData"
           :key="index"
-          class="bg-white rounded-xl shadow-md hover:shadow-lg overflow-hidden border border-gray-100 transition-all duration-200"
+          class="bg-white rounded-xl shadow-md hover:shadow-lg overflow-hidden border border-gray-100 transition-all duration-300 ease-out"
         >
           <button
             @click="toggleItem(index)"
