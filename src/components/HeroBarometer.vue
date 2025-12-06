@@ -46,7 +46,7 @@
       </div>
       
       <!-- Enhanced Spendenbarometer -->
-      <div class="bg-white/15 backdrop-blur-xl rounded-3xl p-8 md:p-10 mt-12 shadow-2xl border border-white/30 max-w-5xl mx-auto transition-all duration-500">
+      <div class="bg-white/15 backdrop-blur-xl rounded-3xl p-8 md:p-10 mt-12 shadow-2xl border border-white/30 max-w-5xl mx-auto transition-all duration-500 ease-out">
         <!-- Header with Icon -->
         <div class="text-center mb-8">
           <div class="inline-flex items-center justify-center w-16 h-16 bg-green-500/30 rounded-full mb-4">
@@ -93,7 +93,8 @@
         <div class="relative mb-6">
           <div class="w-full bg-white/20 rounded-full h-10 md:h-12 overflow-hidden shadow-inner border border-white/30">
             <div 
-              class="bg-gradient-to-r from-green-400 via-emerald-500 to-teal-500 h-full rounded-full transition-all duration-1000 ease-in-out flex items-center justify-end pr-4 shadow-lg relative overflow-hidden"
+              class="bg-gradient-to-r from-green-400 via-emerald-500 to-teal-500 h-full rounded-full transition-all duration-1000 ease-out flex items-center justify-end pr-4 shadow-lg relative overflow-hidden"
+              style="transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);"
               :style="{ width: `${Math.min((currentAmount / targetAmount) * 100, 100)}%` }"
             >
               <!-- Animated shine effect -->
@@ -200,11 +201,11 @@ const formatCurrency = (amount) => {
 }
 
 .fade-enter-active {
-  transition: opacity 1.5s ease-in;
+  transition: opacity 2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .fade-leave-active {
-  transition: opacity 0.5s ease-out;
+  transition: opacity 1s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .fade-enter-from {

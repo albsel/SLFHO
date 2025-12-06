@@ -21,13 +21,13 @@
         >
           <button
             @click="toggleItem(index)"
-            class="w-full px-6 py-5 text-left flex justify-between items-center hover:bg-green-50 transition-colors duration-200 group"
+            class="w-full px-6 py-5 text-left flex justify-between items-center hover:bg-green-50 transition-all duration-300 ease-in-out group"
           >
-            <span class="font-semibold text-gray-800 text-lg pr-4 group-hover:text-green-700 transition-colors">
+            <span class="font-semibold text-gray-800 text-lg pr-4 group-hover:text-green-700 transition-colors duration-300 ease-in-out">
               {{ item.question }}
             </span>
             <svg
-              class="w-6 h-6 text-green-600 flex-shrink-0 transition-transform duration-300 group-hover:text-green-700"
+              class="w-6 h-6 text-green-600 flex-shrink-0 transition-all duration-500 ease-in-out group-hover:text-green-700"
               :class="{ 'rotate-180': openItems[index] }"
               fill="none"
               stroke="currentColor"
@@ -63,14 +63,25 @@ const toggleItem = (index) => {
 </script>
 
 <style scoped>
-.slide-enter-active,
-.slide-leave-active {
-  transition: all 0.3s ease;
+.slide-enter-active {
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   max-height: 500px;
   overflow: hidden;
 }
 
-.slide-enter-from,
+.slide-leave-active {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  max-height: 500px;
+  overflow: hidden;
+}
+
+.slide-enter-from {
+  max-height: 0;
+  opacity: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
 .slide-leave-to {
   max-height: 0;
   opacity: 0;

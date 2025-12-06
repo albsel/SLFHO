@@ -50,7 +50,7 @@
             id="name"
             v-model="form.name"
             type="text"
-              class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-green-500 focus:border-green-500 transition-all duration-300"
+              class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-green-500 focus:border-green-500 transition-all duration-300 ease-out"
             :class="{ 'border-red-400 focus:ring-red-400 focus:border-red-400': errors.name }"
             placeholder="Ihr vollständiger Name"
             @blur="validateName"
@@ -77,7 +77,7 @@
             id="email"
             v-model="form.email"
             type="email"
-              class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-green-500 focus:border-green-500 transition-all duration-300"
+              class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-green-500 focus:border-green-500 transition-all duration-300 ease-out"
             :class="{ 'border-red-400 focus:ring-red-400 focus:border-red-400': errors.email }"
             placeholder="ihre.email@beispiel.de"
             @blur="validateEmail"
@@ -108,7 +108,7 @@
               :key="quickAmount"
               type="button"
               @click="setQuickAmount(quickAmount)"
-              class="px-4 py-2 border border-gray-300 rounded-lg font-semibold transition-all duration-300 hover:scale-105"
+              class="px-4 py-2 border border-gray-300 rounded-lg font-semibold transition-all duration-300 ease-out hover:scale-105 active:scale-95"
               :class="form.amount === quickAmount 
                 ? 'bg-green-600 text-white border-green-500 shadow-md' 
                 : 'bg-white text-gray-700 hover:border-green-400 hover:bg-green-50'"
@@ -125,7 +125,7 @@
               type="number"
               min="5"
               step="0.01"
-              class="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-green-500 focus:border-green-500 transition-all duration-300"
+              class="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-green-500 focus:border-green-500 transition-all duration-300 ease-out"
               :class="{ 'border-red-400 focus:ring-red-400 focus:border-red-400': errors.amount }"
               placeholder="5.00"
             />
@@ -162,7 +162,7 @@
         <button
           type="submit"
           :disabled="isSubmitting"
-          class="w-full bg-gradient-to-r from-green-600 to-emerald-700 hover:from-green-700 hover:to-emerald-800 text-white font-bold py-4 px-6 rounded-lg transition-all duration-200 shadow-lg hover:shadow-2xl transform hover:scale-[1.02] disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none flex items-center justify-center"
+          class="w-full bg-gradient-to-r from-green-600 to-emerald-700 hover:from-green-700 hover:to-emerald-800 text-white font-bold py-4 px-6 rounded-lg transition-all duration-300 ease-out shadow-lg hover:shadow-2xl transform hover:scale-[1.02] active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none flex items-center justify-center"
         >
           <svg v-if="isSubmitting" class="animate-spin -ml-1 mr-3 h-5 w-5 text-white" fill="none" viewBox="0 0 24 24">
             <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
@@ -282,11 +282,11 @@ const handleSubmit = async () => {
 
 <style scoped>
 .slide-down-enter-active {
-  transition: all 0.4s ease-out;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .slide-down-leave-active {
-  transition: all 0.3s ease-in;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .slide-down-enter-from {
