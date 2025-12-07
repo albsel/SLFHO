@@ -203,11 +203,12 @@
           </div>
   
           <!-- Submit -->
-          <button
-            type="submit"
-            :disabled="isSubmitting"
-            class="w-full bg-gradient-to-r from-brand-primaryDark to-brand-secondaryDark hover:from-brand-primaryDark/90 hover:to-brand-secondaryDark/90 text-white font-bold py-4 px-6 rounded-lg transition-all duration-300 shadow-lg hover:shadow-2xl transform hover:scale-[1.02] active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
-          >
+          <div class="flex justify-center">
+            <button
+              type="submit"
+              :disabled="isSubmitting"
+              class="w-full md:w-1/2 bg-gradient-to-r from-brand-primaryDark to-brand-secondaryDark hover:from-brand-primaryDark/90 hover:to-brand-secondaryDark/90 text-white font-bold py-4 px-6 rounded-lg transition-all duration-300 shadow-lg hover:shadow-2xl transform hover:scale-[1.02] active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
+            >
             <!-- Loader -->
             <svg
               v-if="isSubmitting"
