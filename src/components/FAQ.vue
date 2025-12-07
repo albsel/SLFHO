@@ -63,30 +63,23 @@ const toggleItem = (index) => {
 </script>
 
 <style scoped>
+/* Vue transition classes using Tailwind utilities */
 .slide-enter-active {
-  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-  max-height: 500px;
-  overflow: hidden;
+  @apply transition-all duration-500 max-h-[500px] overflow-hidden;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .slide-leave-active {
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  max-height: 500px;
-  overflow: hidden;
+  @apply transition-all duration-[400ms] max-h-[500px] overflow-hidden;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .slide-enter-from {
-  max-height: 0;
-  opacity: 0;
-  padding-top: 0;
-  padding-bottom: 0;
+  @apply max-h-0 opacity-0 pt-0 pb-0;
 }
 
 .slide-leave-to {
-  max-height: 0;
-  opacity: 0;
-  padding-top: 0;
-  padding-bottom: 0;
+  @apply max-h-0 opacity-0 pt-0 pb-0;
 }
 </style>
 
