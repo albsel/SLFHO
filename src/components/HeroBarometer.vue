@@ -21,11 +21,11 @@
           loading="lazy"
         />
         <!-- Gradient overlay -->
-        <div class="absolute inset-0 bg-gradient-to-br from-green-900/60 via-emerald-800/55 to-teal-900/60"></div>
+         <div class="absolute inset-0 bg-gradient-to-br from-overlay-dark via-overlay-medium to-overlay-light"></div>
       </div>
   
-      <!-- Content -->
-      <div class="relative z-10 w-full max-w-6xl mx-auto px-4 py-16 md:py-20">
+    <!-- Content -->
+    <div class="container relative z-10 py-16 md:py-20">
         <div class="text-center">
           <!-- Icon -->
           <div class="mb-6 flex justify-center">
@@ -45,14 +45,14 @@
           <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 leading-tight drop-shadow-2xl">
             Schutz für unsere Natur
           </h1>
-          <p class="text-base sm:text-lg md:text-2xl mb-8 md:mb-10 text-green-100 drop-shadow-lg max-w-3xl mx-auto">
+          <p class="text-base sm:text-lg md:text-2xl mb-8 md:mb-10 text-brand-textLight drop-shadow-lg max-w-3xl mx-auto">
             Gemeinsam für eine nachhaltige und grüne Zukunft – jeder Beitrag zählt.
           </p>
   
           <!-- Donate Now Button -->
           <button
             @click="scrollToDonate"
-            class="inline-flex items-center px-7 md:px-8 py-3 md:py-4 bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white font-semibold md:font-bold text-base md:text-lg rounded-full shadow-2xl transform hover:translate-y-[-2px] hover:scale-105 focus:outline-none focus:ring-2 focus:ring-green-300 focus:ring-offset-2 focus:ring-offset-green-900 transition-all duration-300 mb-10 md:mb-12"
+             class="inline-flex items-center px-7 md:px-8 py-3 md:py-4 bg-gradient-to-r from-brand-primary to-brand-secondary hover:from-brand-primaryDark hover:to-brand-secondaryDark text-white font-semibold md:font-bold text-base md:text-lg rounded-full shadow-2xl transform hover:translate-y-[-2px] hover:scale-105 focus:outline-none focus:ring-2 focus:ring-brand-primaryLight focus:ring-offset-2 focus:ring-offset-overlay-dark transition-all duration-300 mb-10 md:mb-12"
           >
             <svg class="w-5 h-5 md:w-6 md:h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
@@ -63,11 +63,11 @@
   
         <!-- Spendenbarometer -->
         <div
-          class="bg-white/15 backdrop-blur-xl rounded-3xl p-6 sm:p-8 md:p-10 mt-4 md:mt-8 shadow-2xl border border-white/30 max-w-5xl mx-auto transition-all duration-300"
+           class="container bg-white/15 backdrop-blur-xl rounded-3xl p-6 sm:p-8 md:p-10 mt-4 md:mt-8 shadow-2xl border border-white/30 max-w-5xl transition-all duration-300"
         >
           <!-- Header -->
           <div class="text-center mb-6 md:mb-8">
-            <div class="inline-flex items-center justify-center w-12 h-12 md:w-16 md:h-16 bg-green-500/30 rounded-full mb-3 md:mb-4">
+             <div class="inline-flex items-center justify-center w-12 h-12 md:w-16 md:h-16 bg-brand-primary/30 rounded-full mb-3 md:mb-4">
               <svg class="w-6 h-6 md:w-8 md:h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path
                   stroke-linecap="round"
@@ -78,7 +78,7 @@
               </svg>
             </div>
             <h2 class="text-lg sm:text-2xl md:text-3xl font-bold mb-1 md:mb-2">Unser Spendenbarometer</h2>
-            <p class="text-green-100 text-xs sm:text-sm md:text-base">
+            <p class="text-brand-textLight text-xs sm:text-sm md:text-base">
               Live-Überblick über den aktuellen Spendenstand
             </p>
           </div>
@@ -87,15 +87,15 @@
           <div class="mb-6 md:mb-8">
             <div class="flex flex-col md:flex-row items-center justify-center gap-3 md:gap-6 mb-4">
               <div class="text-center md:text-right">
-                <p class="text-xs md:text-sm text-green-200 mb-1">Gesammelt</p>
+                <p class="text-xs md:text-sm text-brand-textMedium mb-1">Gesammelt</p>
                 <p class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold drop-shadow-lg">
                   {{ formatCurrency(currentAmount) }}
                 </p>
               </div>
-              <div class="hidden md:block text-green-300 text-2xl font-light">/</div>
+              <div class="hidden md:block text-brand-textLighter text-2xl font-light">/</div>
               <div class="text-center md:text-left">
-                <p class="text-xs md:text-sm text-green-200 mb-1">Ziel</p>
-                <p class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-green-100">
+                <p class="text-xs md:text-sm text-brand-textMedium mb-1">Ziel</p>
+                <p class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-brand-textLight">
                   {{ formatCurrency(targetAmount) }}
                 </p>
               </div>
@@ -103,9 +103,9 @@
   
             <!-- Percentage Badge -->
             <div class="flex justify-center mb-4 md:mb-6">
-              <div
-                class="inline-flex items-center px-4 sm:px-6 py-2.5 sm:py-3 bg-green-500/30 backdrop-blur-sm rounded-full border border-green-400/50"
-              >
+               <div
+                 class="inline-flex items-center px-4 sm:px-6 py-2.5 sm:py-3 bg-brand-primary/30 backdrop-blur-sm rounded-full border border-brand-primaryLight/50"
+               >
                 <svg class="w-4 h-4 sm:w-5 sm:h-5 mr-2 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
                 </svg>
@@ -120,7 +120,7 @@
           <div class="relative mb-4 md:mb-6">
             <div class="w-full bg-white/20 rounded-full h-6 sm:h-8 md:h-10 overflow-hidden shadow-inner border border-white/30">
               <div
-                class="h-full rounded-full transition-all duration-1000 ease-out flex items-center justify-end pr-3 sm:pr-4 shadow-lg bg-gradient-to-r from-green-400 via-emerald-500 to-teal-500"
+                 class="h-full rounded-full transition-all duration-1000 ease-out flex items-center justify-end pr-3 sm:pr-4 shadow-lg bg-gradient-to-r from-brand-primaryLight via-brand-secondary to-brand-accent"
                 :style="{ width: barWidth }"
               >
                 <span
@@ -144,10 +144,10 @@
           <!-- Remaining -->
           <div class="text-center">
             <div class="inline-flex items-center px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full">
-              <svg class="w-4 h-4 sm:w-5 sm:h-5 mr-2 text-green-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg class="w-4 h-4 sm:w-5 sm:h-5 mr-2 text-brand-textMedium" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
               </svg>
-              <p class="text-green-200 text-xs sm:text-sm md:text-base font-semibold">
+              <p class="text-brand-textMedium text-xs sm:text-sm md:text-base font-semibold">
                 Noch
                 <span class="text-white font-bold">
                   {{ formatCurrency(Math.max(0, targetAmount - currentAmount)) }}

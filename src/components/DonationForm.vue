@@ -1,10 +1,10 @@
 <template>
-    <section id="donate-section" class="py-16 px-4 bg-white">
-      <div class="max-w-2xl mx-auto">
+    <section id="donate-section" class="py-section bg-white">
+      <div class="container max-w-2xl">
         <!-- Header -->
         <div class="text-center mb-10">
-          <div class="inline-flex items-center justify-center w-16 h-16 bg-green-100 rounded-full mb-4">
-            <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <div class="inline-flex items-center justify-center w-16 h-16 bg-brand-primary/10 rounded-full mb-4">
+            <svg class="w-8 h-8 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
             </svg>
           </div>
@@ -23,17 +23,17 @@
         >
           <div
             v-if="showThankYou"
-            class="mb-6 p-6 bg-gradient-to-r from-green-50 to-emerald-50 border border-green-400 rounded-xl shadow-lg"
+            class="mb-6 p-6 bg-gradient-to-r from-brand-primary/5 to-brand-secondary/5 border border-brand-primaryLight rounded-xl shadow-lg"
           >
             <div class="flex items-start">
-              <div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center">
+              <div class="w-12 h-12 bg-brand-success rounded-full flex items-center justify-center">
                 <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                 </svg>
               </div>
               <div class="ml-4">
-                <p class="font-bold text-xl text-green-800">Vielen Dank für Ihre Spende! 🎉</p>
-                <p class="text-sm mt-1 text-green-700">Ihr Beitrag hilft uns, unser Ziel zu erreichen.</p>
+                <p class="font-bold text-xl text-brand-primaryDark">Vielen Dank für Ihre Spende! 🎉</p>
+                <p class="text-sm mt-1 text-brand-primaryDark/80">Ihr Beitrag hilft uns, unser Ziel zu erreichen.</p>
               </div>
             </div>
           </div>
@@ -48,7 +48,7 @@
           <div class="mb-6">
             <label for="name" class="block text-gray-700 font-semibold mb-2">
               <span class="flex items-center">
-                <svg class="w-5 h-5 mr-2 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg class="w-5 h-5 mr-2 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path
                     stroke-linecap="round"
                     stroke-linejoin="round"
@@ -56,7 +56,7 @@
                     d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
                   />
                 </svg>
-                Name <span class="text-red-500 ml-1">*</span>
+                Name <span class="text-brand-error ml-1">*</span>
               </span>
             </label>
   
@@ -64,13 +64,13 @@
               id="name"
               v-model="form.name"
               type="text"
-              class="w-full px-4 py-3 border rounded-lg transition-all duration-300 focus:outline-none focus:ring-1 focus:ring-green-500 focus:border-green-500"
-              :class="{ 'border-red-400 focus:ring-red-400 focus:border-red-400': errors.name, 'border-gray-300': !errors.name }"
+              class="w-full px-4 py-3 border rounded-lg transition-all duration-300 focus:outline-none focus:ring-1 focus:ring-brand-primary focus:border-brand-primary"
+              :class="{ 'border-brand-errorLight focus:ring-brand-errorLight focus:border-brand-errorLight': errors.name, 'border-gray-300': !errors.name }"
               placeholder="Ihr vollständiger Name"
               @blur="validateName"
             />
   
-            <p v-if="errors.name" class="text-red-500 text-sm mt-2 flex items-center">
+            <p v-if="errors.name" class="text-brand-error text-sm mt-2 flex items-center">
               <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
                 <path
                   fill-rule="evenodd"
@@ -86,7 +86,7 @@
           <div class="mb-6">
             <label for="email" class="block text-gray-700 font-semibold mb-2">
               <span class="flex items-center">
-                <svg class="w-5 h-5 mr-2 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg class="w-5 h-5 mr-2 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path
                     stroke-linecap="round"
                     stroke-linejoin="round"
@@ -94,7 +94,7 @@
                     d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
                   />
                 </svg>
-                E-Mail <span class="text-red-500 ml-1">*</span>
+                E-Mail <span class="text-brand-error ml-1">*</span>
               </span>
             </label>
   
@@ -102,13 +102,13 @@
               id="email"
               v-model="form.email"
               type="email"
-              class="w-full px-4 py-3 border rounded-lg transition-all duration-300 focus:outline-none focus:ring-1 focus:ring-green-500 focus:border-green-500"
-              :class="{ 'border-red-400 focus:ring-red-400 focus:border-red-400': errors.email, 'border-gray-300': !errors.email }"
+              class="w-full px-4 py-3 border rounded-lg transition-all duration-300 focus:outline-none focus:ring-1 focus:ring-brand-primary focus:border-brand-primary"
+              :class="{ 'border-brand-errorLight focus:ring-brand-errorLight focus:border-brand-errorLight': errors.email, 'border-gray-300': !errors.email }"
               placeholder="ihre.email@beispiel.de"
               @blur="validateEmail"
             />
   
-            <p v-if="errors.email" class="text-red-500 text-sm mt-2 flex items-center">
+            <p v-if="errors.email" class="text-brand-error text-sm mt-2 flex items-center">
               <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
                 <path
                   fill-rule="evenodd"
@@ -124,7 +124,7 @@
           <div class="mb-6">
             <label for="amount" class="block text-gray-700 font-semibold mb-3">
               <span class="flex items-center">
-                <svg class="w-5 h-5 mr-2 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg class="w-5 h-5 mr-2 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path
                     stroke-linecap="round"
                     stroke-linejoin="round"
@@ -132,7 +132,7 @@
                     d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
                   />
                 </svg>
-                Spendenbetrag (€) <span class="text-red-500 ml-1">*</span>
+                Spendenbetrag (€) <span class="text-brand-error ml-1">*</span>
               </span>
             </label>
   
@@ -145,8 +145,8 @@
                 @click="setQuickAmount(quickAmount)"
                 class="px-4 py-2 border rounded-lg font-semibold transition transform duration-200"
                 :class="form.amount === quickAmount
-                  ? 'bg-green-600 text-white border-green-500 shadow-md scale-105'
-                  : 'bg-white text-gray-700 border-gray-300 hover:border-green-400 hover:bg-green-50 hover:scale-105'"
+                  ? 'bg-brand-primaryDark text-white border-brand-primary shadow-md scale-105'
+                  : 'bg-white text-gray-700 border-gray-300 hover:border-brand-primaryLight hover:bg-brand-primary/10 hover:scale-105'"
               >
                 {{ quickAmount }} €
               </button>
@@ -162,13 +162,13 @@
                 type="number"
                 min="5"
                 step="0.01"
-                class="w-full pl-10 pr-4 py-3 border rounded-lg transition-all duration-300 focus:outline-none focus:ring-1 focus:ring-green-500 focus:border-green-500"
-                :class="{ 'border-red-400 focus:ring-red-400 focus:border-red-400': errors.amount, 'border-gray-300': !errors.amount }"
+                class="w-full pl-10 pr-4 py-3 border rounded-lg transition-all duration-300 focus:outline-none focus:ring-1 focus:ring-brand-primary focus:border-brand-primary"
+                :class="{ 'border-brand-errorLight focus:ring-brand-errorLight focus:border-brand-errorLight': errors.amount, 'border-gray-300': !errors.amount }"
                 placeholder="5.00"
               />
             </div>
   
-            <p v-if="errors.amount" class="text-red-500 text-sm mt-2 flex items-center">
+            <p v-if="errors.amount" class="text-brand-error text-sm mt-2 flex items-center">
               <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
                 <path
                   fill-rule="evenodd"
@@ -193,7 +193,7 @@
               <input
                 v-model="form.newsletter"
                 type="checkbox"
-                class="w-5 h-5 text-green-600 border-gray-300 rounded focus:ring-green-500"
+                class="w-5 h-5 text-brand-primary border-gray-300 rounded focus:ring-brand-primary"
               />
               <span class="ml-3 text-gray-700">Ich möchte den Newsletter erhalten…</span>
             </label>
@@ -203,7 +203,7 @@
           <button
             type="submit"
             :disabled="isSubmitting"
-            class="w-full bg-gradient-to-r from-green-600 to-emerald-700 hover:from-green-700 hover:to-emerald-800 text-white font-bold py-4 px-6 rounded-lg transition-all duration-300 shadow-lg hover:shadow-2xl transform hover:scale-[1.02] active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
+            class="w-full bg-gradient-to-r from-brand-primaryDark to-brand-secondaryDark hover:from-brand-primaryDark/90 hover:to-brand-secondaryDark/90 text-white font-bold py-4 px-6 rounded-lg transition-all duration-300 shadow-lg hover:shadow-2xl transform hover:scale-[1.02] active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
           >
             <!-- Loader -->
             <svg
