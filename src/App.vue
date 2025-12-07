@@ -31,8 +31,13 @@ const handleDonation = (amount) => {
   currentAmount.value += amount
   showThankYou.value = true
   
-  // Scroll to top to show updated barometer
-  window.scrollTo({ top: 0, behavior: 'smooth' })
+  // Scroll to donation form to show thank you message
+  setTimeout(() => {
+    const donateSection = document.querySelector('#donate-section') || document.querySelector('section.py-16')
+    if (donateSection) {
+      donateSection.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }
+  }, 100)
   
   // Hide thank you message after 5 seconds
   setTimeout(() => {

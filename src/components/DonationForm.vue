@@ -1,5 +1,5 @@
 <template>
-    <section class="py-16 px-4 bg-white">
+    <section id="donate-section" class="py-16 px-4 bg-white">
       <div class="max-w-2xl mx-auto">
         <!-- Header -->
         <div class="text-center mb-10">
