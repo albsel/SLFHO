@@ -64,8 +64,8 @@
               id="name"
               v-model="form.name"
               type="text"
-              class="w-full px-4 py-3 border rounded-lg transition-all duration-300 focus:outline-none focus:ring-1 focus:ring-brand-primary focus:border-brand-primary"
-              :class="{ 'border-brand-errorLight focus:ring-brand-errorLight focus:border-brand-errorLight': errors.name, 'border-gray-300': !errors.name }"
+              class="w-full px-4 py-3 border rounded-lg transition-all duration-300 focus:outline-none focus:ring-0 focus:border-brand-primary"
+              :class="{ 'border-brand-errorLight focus:border-brand-errorLight': errors.name, 'border-gray-300': !errors.name }"
               placeholder="Ihr vollständiger Name"
               @blur="validateName"
             />
@@ -102,8 +102,8 @@
               id="email"
               v-model="form.email"
               type="email"
-              class="w-full px-4 py-3 border rounded-lg transition-all duration-300 focus:outline-none focus:ring-1 focus:ring-brand-primary focus:border-brand-primary"
-              :class="{ 'border-brand-errorLight focus:ring-brand-errorLight focus:border-brand-errorLight': errors.email, 'border-gray-300': !errors.email }"
+              class="w-full px-4 py-3 border rounded-lg transition-all duration-300 focus:outline-none focus:ring-0 focus:border-brand-primary"
+              :class="{ 'border-brand-errorLight focus:border-brand-errorLight': errors.email, 'border-gray-300': !errors.email }"
               placeholder="ihre.email@beispiel.de"
               @blur="validateEmail"
             />
@@ -162,8 +162,8 @@
                 type="number"
                 min="5"
                 step="0.01"
-                class="w-full pl-10 pr-4 py-3 border rounded-lg transition-all duration-300 focus:outline-none focus:ring-1 focus:ring-brand-primary focus:border-brand-primary"
-                :class="{ 'border-brand-errorLight focus:ring-brand-errorLight focus:border-brand-errorLight': errors.amount, 'border-gray-300': !errors.amount }"
+                class="w-full pl-10 pr-4 py-3 border rounded-lg transition-all duration-300 focus:outline-none focus:ring-0 focus:border-brand-primary"
+                :class="{ 'border-brand-errorLight focus:border-brand-errorLight': errors.amount, 'border-gray-300': !errors.amount }"
                 placeholder="5.00"
               />
             </div>
