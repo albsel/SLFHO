@@ -44,80 +44,83 @@
           @submit.prevent="handleSubmit"
           class="bg-white rounded-2xl p-6 md:p-8 shadow-xl border border-gray-100"
         >
-          <!-- Name -->
-          <div class="mb-6">
-            <label for="name" class="block text-gray-700 font-semibold mb-2">
-              <span class="flex items-center">
-                <svg class="w-5 h-5 mr-2 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <!-- Name and Email in same row -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+            <!-- Name -->
+            <div>
+              <label for="name" class="block text-gray-700 font-semibold mb-2">
+                <span class="flex items-center">
+                  <svg class="w-5 h-5 mr-2 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+                    />
+                  </svg>
+                  Name <span class="text-brand-error ml-1">*</span>
+                </span>
+              </label>
+
+              <input
+                id="name"
+                v-model="form.name"
+                type="text"
+                class="w-full px-4 py-3 border rounded-lg transition-all duration-300 focus:outline-none focus:ring-0 focus:border-brand-primary"
+                :class="{ 'border-brand-errorLight focus:border-brand-errorLight': errors.name, 'border-gray-300': !errors.name }"
+                placeholder="Ihr vollständiger Name"
+                @blur="validateName"
+              />
+
+              <p v-if="errors.name" class="text-brand-error text-sm mt-2 flex items-center">
+                <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
                   <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+                    fill-rule="evenodd"
+                    d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z"
+                    clip-rule="evenodd"
                   />
                 </svg>
-                Name <span class="text-brand-error ml-1">*</span>
-              </span>
-            </label>
-  
-            <input
-              id="name"
-              v-model="form.name"
-              type="text"
-              class="w-full px-4 py-3 border rounded-lg transition-all duration-300 focus:outline-none focus:ring-0 focus:border-brand-primary"
-              :class="{ 'border-brand-errorLight focus:border-brand-errorLight': errors.name, 'border-gray-300': !errors.name }"
-              placeholder="Ihr vollständiger Name"
-              @blur="validateName"
-            />
-  
-            <p v-if="errors.name" class="text-brand-error text-sm mt-2 flex items-center">
-              <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
-                <path
-                  fill-rule="evenodd"
-                  d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z"
-                  clip-rule="evenodd"
-                />
-              </svg>
-              {{ errors.name }}
-            </p>
-          </div>
-  
-          <!-- Email -->
-          <div class="mb-6">
-            <label for="email" class="block text-gray-700 font-semibold mb-2">
-              <span class="flex items-center">
-                <svg class="w-5 h-5 mr-2 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                {{ errors.name }}
+              </p>
+            </div>
+
+            <!-- Email -->
+            <div>
+              <label for="email" class="block text-gray-700 font-semibold mb-2">
+                <span class="flex items-center">
+                  <svg class="w-5 h-5 mr-2 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                    />
+                  </svg>
+                  E-Mail <span class="text-brand-error ml-1">*</span>
+                </span>
+              </label>
+
+              <input
+                id="email"
+                v-model="form.email"
+                type="email"
+                class="w-full px-4 py-3 border rounded-lg transition-all duration-300 focus:outline-none focus:ring-0 focus:border-brand-primary"
+                :class="{ 'border-brand-errorLight focus:border-brand-errorLight': errors.email, 'border-gray-300': !errors.email }"
+                placeholder="ihre.email@beispiel.de"
+                @blur="validateEmail"
+              />
+
+              <p v-if="errors.email" class="text-brand-error text-sm mt-2 flex items-center">
+                <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
                   <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                    fill-rule="evenodd"
+                    d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z"
+                    clip-rule="evenodd"
                   />
                 </svg>
-                E-Mail <span class="text-brand-error ml-1">*</span>
-              </span>
-            </label>
-  
-            <input
-              id="email"
-              v-model="form.email"
-              type="email"
-              class="w-full px-4 py-3 border rounded-lg transition-all duration-300 focus:outline-none focus:ring-0 focus:border-brand-primary"
-              :class="{ 'border-brand-errorLight focus:border-brand-errorLight': errors.email, 'border-gray-300': !errors.email }"
-              placeholder="ihre.email@beispiel.de"
-              @blur="validateEmail"
-            />
-  
-            <p v-if="errors.email" class="text-brand-error text-sm mt-2 flex items-center">
-              <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
-                <path
-                  fill-rule="evenodd"
-                  d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z"
-                  clip-rule="evenodd"
-                />
-              </svg>
-              {{ errors.email }}
-            </p>
+                {{ errors.email }}
+              </p>
+            </div>
           </div>
   
           <!-- Amount -->
@@ -230,6 +233,7 @@
   
             <span v-else>Wird verarbeitet...</span>
           </button>
+          </div>
         </form>
       </div>
     </section>
