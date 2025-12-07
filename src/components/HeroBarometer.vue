@@ -25,7 +25,7 @@
       </div>
   
     <!-- Content -->
-    <div class="container relative z-10 py-16 md:py-20">
+    <div class="container max-w-content mx-auto relative z-10 py-16 md:py-20">
         <div class="text-center">
           <!-- Icon -->
           <div class="mb-6 flex justify-center">
@@ -63,7 +63,7 @@
   
         <!-- Spendenbarometer -->
         <div
-           class="container bg-white/15 backdrop-blur-xl rounded-3xl p-6 sm:p-8 md:p-10 mt-4 md:mt-8 shadow-2xl border border-white/30 max-w-5xl transition-all duration-300"
+           class="container max-w-content mx-auto bg-white/15 backdrop-blur-xl rounded-3xl p-6 sm:p-8 md:p-10 mt-4 md:mt-8 shadow-2xl border border-white/30 transition-all duration-300"
         >
           <!-- Header -->
           <div class="text-center mb-6 md:mb-8">

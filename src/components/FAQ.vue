@@ -1,6 +1,6 @@
 <template>
   <section class="py-section bg-gradient-to-b from-gray-50 to-white">
-    <div class="container max-w-3xl">
+    <div class="container max-w-content mx-auto">
       <div class="text-center mb-10">
         <div class="inline-flex items-center justify-center w-16 h-16 bg-brand-primary/10 rounded-full mb-4">
           <svg class="w-8 h-8 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">

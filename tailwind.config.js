@@ -46,6 +46,10 @@ export default {
           '2xl': '1400px',
         },
       },
+      // Max width for content sections
+      maxWidth: {
+        'content': '1200px',
+      },
       // Keyframes
       keyframes: {
         shimmer: {

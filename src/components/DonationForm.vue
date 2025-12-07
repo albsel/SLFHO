@@ -1,6 +1,6 @@
 <template>
     <section id="donate-section" class="py-section bg-white">
-      <div class="container max-w-2xl">
+      <div class="container max-w-content mx-auto">
         <!-- Header -->
         <div class="text-center mb-10">
           <div class="inline-flex items-center justify-center w-16 h-16 bg-brand-primary/10 rounded-full mb-4">
