@@ -11,6 +11,7 @@
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
+            aria-hidden="true"
           >
             <path
               stroke-linecap="round"
@@ -39,11 +40,14 @@
       >
         <div
           v-if="showThankYou"
+          role="status"
+          aria-live="polite"
           class="mb-6 p-6 bg-gradient-to-r from-brand-primary/5 to-brand-secondary/5 border border-brand-primaryLight rounded-xl shadow-lg"
         >
           <div class="flex items-start">
             <div
-              class="w-12 h-12 bg-brand-success rounded-full flex items-center justify-center"
+              class="w-12 h-12 bg-brand-success rounded-full flex items-center justify-center flex-shrink-0"
+              aria-hidden="true"
             >
               <svg
                 class="w-6 h-6 text-white"
@@ -75,6 +79,7 @@
       <form
         @submit.prevent="handleSubmit"
         class="bg-white rounded-2xl p-6 md:p-8 shadow-xl border border-gray-100"
+        novalidate
       >
         <!-- Name and Email in same row -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
@@ -87,6 +92,7 @@
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
+                  aria-hidden="true"
                 >
                   <path
                     stroke-linecap="round"
@@ -95,7 +101,10 @@
                     d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
                   />
                 </svg>
-                Name <span class="text-brand-error ml-1">*</span>
+                Name
+                <span class="text-brand-error ml-1" aria-label="Pflichtfeld"
+                  >*</span
+                >
               </span>
             </label>
 
@@ -103,21 +112,32 @@
               id="name"
               v-model="form.name"
               type="text"
+              required
+              autocomplete="name"
               class="w-full px-4 py-3 rounded-lg border transition-colors duration-200 outline-none focus:outline-none focus:ring-0"
               :class="
                 errors.name
                   ? 'border-brand-errorLight focus:border-brand-errorLight'
                   : 'border-gray-300 focus:border-brand-primary'
               "
+              :aria-invalid="!!errors.name"
+              :aria-describedby="errors.name ? 'name-error' : undefined"
               placeholder="Ihr vollständiger Name"
               @blur="validateName"
             />
 
             <p
               v-if="errors.name"
+              id="name-error"
               class="text-brand-error text-sm mt-2 flex items-center"
+              role="alert"
             >
-              <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+              <svg
+                class="w-4 h-4 mr-1 flex-shrink-0"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                aria-hidden="true"
+              >
                 <path
                   fill-rule="evenodd"
                   d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z"
@@ -137,6 +157,7 @@
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
+                  aria-hidden="true"
                 >
                   <path
                     stroke-linecap="round"
@@ -145,7 +166,10 @@
                     d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
                   />
                 </svg>
-                E-Mail <span class="text-brand-error ml-1">*</span>
+                E-Mail
+                <span class="text-brand-error ml-1" aria-label="Pflichtfeld"
+                  >*</span
+                >
               </span>
             </label>
 
@@ -153,21 +177,32 @@
               id="email"
               v-model="form.email"
               type="email"
+              required
+              autocomplete="email"
               class="w-full px-4 py-3 rounded-lg border transition-colors duration-200 outline-none focus:outline-none focus:ring-0"
               :class="
                 errors.email
                   ? 'border-brand-errorLight focus:border-brand-errorLight'
                   : 'border-gray-300 focus:border-brand-primary'
               "
+              :aria-invalid="!!errors.email"
+              :aria-describedby="errors.email ? 'email-error' : undefined"
               placeholder="ihre.email@beispiel.de"
               @blur="validateEmail"
             />
 
             <p
               v-if="errors.email"
+              id="email-error"
               class="text-brand-error text-sm mt-2 flex items-center"
+              role="alert"
             >
-              <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+              <svg
+                class="w-4 h-4 mr-1 flex-shrink-0"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                aria-hidden="true"
+              >
                 <path
                   fill-rule="evenodd"
                   d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z"
@@ -188,6 +223,7 @@
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
+                aria-hidden="true"
               >
                 <path
                   stroke-linecap="round"
@@ -196,12 +232,19 @@
                   d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
                 />
               </svg>
-              Spendenbetrag (€) <span class="text-brand-error ml-1">*</span>
+              Spendenbetrag (€)
+              <span class="text-brand-error ml-1" aria-label="Pflichtfeld"
+                >*</span
+              >
             </span>
           </label>
 
           <!-- Preset Buttons -->
-          <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-4">
+          <div
+            class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-4"
+            role="group"
+            aria-label="Vordefinierte Spendenbeträge"
+          >
             <button
               v-for="quickAmount in [10, 25, 50, 100]"
               :key="quickAmount"
@@ -213,6 +256,7 @@
                   ? 'bg-brand-primaryDark text-white border-brand-primary shadow-md scale-105'
                   : 'bg-white text-gray-700 border-gray-300 hover:border-brand-primaryLight hover:bg-brand-primary/10 hover:scale-105'
               "
+              :aria-pressed="form.amount === quickAmount"
             >
               {{ quickAmount }} €
             </button>
@@ -222,6 +266,7 @@
           <div class="relative">
             <span
               class="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500 font-semibold"
+              aria-hidden="true"
               >€</span
             >
 
@@ -231,12 +276,16 @@
               type="number"
               min="5"
               step="0.01"
+              required
+              inputmode="decimal"
               class="w-full pl-10 pr-4 py-3 rounded-lg border transition-colors duration-200 outline-none focus:outline-none focus:ring-0"
               :class="
                 errors.amount
                   ? 'border-brand-errorLight focus:border-brand-errorLight'
                   : 'border-gray-300 focus:border-brand-primary'
               "
+              :aria-invalid="!!errors.amount"
+              :aria-describedby="errors.amount ? 'amount-error' : 'amount-help'"
               placeholder="5.00"
               @blur="validateAmount"
             />
@@ -244,9 +293,16 @@
 
           <p
             v-if="errors.amount"
+            id="amount-error"
             class="text-brand-error text-sm mt-2 flex items-center"
+            role="alert"
           >
-            <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+            <svg
+              class="w-4 h-4 mr-1 flex-shrink-0"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              aria-hidden="true"
+            >
               <path
                 fill-rule="evenodd"
                 d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z"
@@ -256,12 +312,16 @@
             {{ errors.amount }}
           </p>
 
-          <p class="text-gray-500 text-sm mt-2 flex items-center">
+          <p
+            id="amount-help"
+            class="text-gray-500 text-sm mt-2 flex items-center"
+          >
             <svg
-              class="w-4 h-4 mr-1"
+              class="w-4 h-4 mr-1 flex-shrink-0"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
+              aria-hidden="true"
             >
               <path
                 stroke-linecap="round"
@@ -276,15 +336,16 @@
 
         <!-- Newsletter -->
         <div class="mb-6">
-          <label class="flex items-center cursor-pointer">
+          <label class="flex items-start cursor-pointer group">
             <input
               v-model="form.newsletter"
               type="checkbox"
-              class="checkbox-brand w-5 h-5 border-gray-300 rounded focus:ring-brand-primary"
+              class="checkbox-brand w-5 h-5 mt-0.5 border-gray-300 rounded focus:ring-brand-primary flex-shrink-0"
             />
 
-            <span class="ml-3 text-gray-700"
-              >Ich möchte den Newsletter erhalten…</span
+            <span
+              class="ml-3 text-gray-700 group-hover:text-gray-900 transition-colors"
+              >Ich möchte den Newsletter erhalten</span
             >
           </label>
         </div>
@@ -294,7 +355,8 @@
           <button
             type="submit"
             :disabled="isSubmitting"
-            class="btn-primary w-full md:w-1/2 flex items-center justify-center"
+            :aria-busy="isSubmitting"
+            class="btn-primary w-full md:w-1/2 flex items-center justify-center disabled:opacity-70 disabled:cursor-not-allowed"
           >
             <!-- Loader -->
             <svg
@@ -302,6 +364,7 @@
               class="animate-spin -ml-1 mr-3 h-5 w-5 text-white"
               fill="none"
               viewBox="0 0 24 24"
+              aria-hidden="true"
             >
               <circle
                 class="opacity-25"
@@ -325,6 +388,7 @@
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
+                aria-hidden="true"
               >
                 <path
                   stroke-linecap="round"

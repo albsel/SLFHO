@@ -13,6 +13,10 @@
         :alt="`Naturbild ${currentImageIndex + 1}`"
         class="absolute inset-0 w-full h-full object-cover transition-opacity duration-[1400ms] ease-in-out"
         :class="isFading ? 'opacity-0' : 'opacity-100'"
+        :loading="currentImageIndex === 0 ? 'eager' : 'lazy'"
+        :fetchpriority="currentImageIndex === 0 ? 'high' : 'low'"
+        width="1920"
+        height="1080"
       />
       <!-- Next image -->
       <img
@@ -22,6 +26,9 @@
         :alt="`Naturbild ${nextImageIndex + 1}`"
         class="absolute inset-0 w-full h-full object-cover transition-opacity duration-[1400ms] ease-in-out"
         :class="isFading ? 'opacity-100' : 'opacity-0'"
+        loading="lazy"
+        width="1920"
+        height="1080"
       />
 
       <!-- Dark overlay for readability -->
@@ -65,6 +72,7 @@
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
+                  aria-hidden="true"
                 >
                   <path
                     stroke-linecap="round"
@@ -83,6 +91,7 @@
             >
               <span
                 class="inline-block w-2 h-2 bg-brand-accent rounded-full mr-2"
+                aria-hidden="true"
               ></span>
               {{ progressPercentage }}% des Spendenziels erreicht
             </p>
@@ -90,6 +99,8 @@
             <!-- BAROMETER CARD -->
             <div
               class="mt-10 bg-gradient-to-br from-emerald-900/40 via-green-800/30 to-teal-900/40 backdrop-blur-md rounded-3xl p-6 shadow-xl border border-emerald-400/20"
+              role="region"
+              aria-label="Spendenbarometer"
             >
               <!-- Header -->
               <p class="text-sm text-brand-100 text-center lg:text-left">
@@ -107,7 +118,12 @@
                   </p>
                 </div>
 
-                <div class="hidden md:block text-brand-100/70 text-3xl">/</div>
+                <div
+                  class="hidden md:block text-brand-100/70 text-3xl"
+                  aria-hidden="true"
+                >
+                  /
+                </div>
 
                 <div>
                   <p class="text-xs text-brand-100/80">Ziel</p>
@@ -121,6 +137,11 @@
               <div class="mt-6">
                 <div
                   class="w-full bg-white/20 rounded-full h-6 overflow-hidden"
+                  role="progressbar"
+                  :aria-valuenow="progressPercentage"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  :aria-label="`${progressPercentage}% des Spendenziels erreicht`"
                 >
                   <div
                     class="h-full bg-gradient-to-r from-brand-500 to-brand-accent transition-all duration-700 ease-out rounded-full flex items-center justify-end pr-4"
@@ -152,7 +173,7 @@
           <!-- RIGHT: Image column aligned with container grid -->
           <div class="hidden lg:flex justify-center">
             <div
-              class="rounded-[2.5rem] overflow-hidden shadow-lg border border-white/20 w-full max-w-lg relative"
+              class="rounded-[2.5rem] overflow-hidden shadow-lg border border-white/20 w-full relative"
             >
               <img
                 v-for="(img, idx) in images"
@@ -165,6 +186,9 @@
                     ? 'opacity-100 scale-100'
                     : 'opacity-0 scale-105'
                 "
+                loading="lazy"
+                width="600"
+                height="600"
               />
               <!-- Maintain aspect ratio -->
               <div class="pb-[100%]"></div>
@@ -190,16 +214,16 @@ const props = defineProps({
   },
 });
 
-// 🔁 Nature images - beautiful landscapes
+// 🔁 Nature images - optimized for performance
 const images = [
-  // Waterfall / energy
-  "https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=1600&q=85",
+  // Waterfall / energy - reduced quality and size
+  "https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=1200&q=75&fm=webp",
   // Forest light
-  "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1600&q=85",
+  "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1200&q=75&fm=webp",
   // Lake and mountains
-  "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=1600&q=85",
+  "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=1200&q=75&fm=webp",
   // Green meadow with flowers
-  "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1600&q=85",
+  "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1200&q=75&fm=webp",
 ];
 
 const currentImageIndex = ref(0);
@@ -226,11 +250,18 @@ const scheduleNext = () => {
 };
 
 onMounted(() => {
-  // Preload images to avoid flicker
-  images.forEach((src) => {
-    const img = new Image();
-    img.src = src;
-  });
+  // Preload first image immediately, others after a delay
+  const preloadFirst = new Image();
+  preloadFirst.src = images[0];
+
+  // Preload other images after initial render
+  setTimeout(() => {
+    images.slice(1).forEach((src) => {
+      const img = new Image();
+      img.src = src;
+    });
+  }, 1000);
+
   scheduleNext();
 });
 
