@@ -2,34 +2,88 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Smooth scrolling globally */
 html {
   scroll-behavior: smooth;
 }
 
+/* Base typography smoothing */
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Custom scrollbar */
+/* ------------------------------ */
+/* Custom Scrollbar (Optional UX) */
+/* ------------------------------ */
 ::-webkit-scrollbar {
   width: 10px;
 }
-
 ::-webkit-scrollbar-track {
   background: #f1f1f1;
 }
-
 ::-webkit-scrollbar-thumb {
   background: #888;
   border-radius: 5px;
 }
-
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
 
+/* ----------------------------------------- */
+/* COMPONENTS LAYER — Custom UI Components   */
+/* ----------------------------------------- */
+@layer components {
+  /* ------------------ */
+  /* DEFAULT PRIMARY BTN */
+  /* ------------------ */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2
+      font-semibold rounded-full
+      bg-brand-primary hover:bg-brand-primaryDark
+      text-white
+      py-2.5 px-5
+      shadow-md hover:shadow-lg
+      transition-all duration-300
+      transform hover:scale-[1.02] active:scale-[0.97]
+      disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  /* ------------------ */
+  /* SMALL NAVBAR BUTTON */
+  /* ------------------ */
+  .btn-primary-sm {
+    @apply inline-flex items-center justify-center gap-2
+      font-semibold rounded-full
+      bg-brand-primary hover:bg-brand-primaryDark
+      text-white
+      py-2 px-4
+      shadow-sm hover:shadow-md
+      transition-all duration-300
+      transform hover:scale-[1.01] active:scale-[0.97]
+      disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  /* ------------------ */
+  /* ICON INSIDE BUTTONS */
+  /* ------------------ */
+  .btn-primary-icon {
+    @apply w-4 h-4;
+  }
+
+  /* ------------------ */
+  /* CHECKBOX BRANDING  */
+  /* ------------------ */
+  /*
+    Forces consistent green accent color across browsers.
+    Simple, stable, works in all modern engines.
+    Usage: <input type="checkbox" class="checkbox-brand">
+  */
+  .checkbox-brand {
+    accent-color: #10b981; /* brand-primary */
+  }
+}

@@ -1,6 +1,6 @@
 <template>
-  <section id="donate-section" class="py-section bg-white">
-    <div class="container max-w-content mx-auto">
+  <section id="donate-section" class="py-20">
+    <div class="container">
       <!-- Header -->
       <div class="text-center mb-10">
         <div
@@ -280,8 +280,9 @@
             <input
               v-model="form.newsletter"
               type="checkbox"
-              class="w-5 h-5 text-brand-primary border-gray-300 rounded focus:ring-brand-primary"
+              class="checkbox-brand w-5 h-5 border-gray-300 rounded focus:ring-brand-primary"
             />
+
             <span class="ml-3 text-gray-700"
               >Ich möchte den Newsletter erhalten…</span
             >
@@ -293,7 +294,7 @@
           <button
             type="submit"
             :disabled="isSubmitting"
-            class="w-full md:w-1/2 bg-gradient-to-r from-brand-primaryDark to-brand-secondaryDark hover:from-brand-primaryDark/90 hover:to-brand-secondaryDark/90 text-white font-bold py-4 px-6 rounded-lg transition-all duration-300 shadow-lg hover:shadow-2xl transform hover:scale-[1.02] active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
+            class="btn-primary w-full md:w-1/2 flex items-center justify-center"
           >
             <!-- Loader -->
             <svg
@@ -317,10 +318,10 @@
               ></path>
             </svg>
 
-            <!-- Default -->
+            <!-- Default button content -->
             <span v-if="!isSubmitting" class="flex items-center">
               <svg
-                class="w-5 h-5 mr-2"
+                class="btn-primary-icon mr-2"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"

@@ -1,109 +1,37 @@
-# Spenden-Landingpage
+Spenden-Landingpage – Coding Challenge
+🛠️ Tech-Entscheidung
 
-Eine interaktive One-Page-Spenden-Landingpage für eine fiktive Hilfsorganisation, erstellt mit Vue.js 3, Tailwind CSS und Vanilla JavaScript.
+Die Landingpage wurde mit Vue 3, Vite und Tailwind CSS umgesetzt, um eine saubere Komponentenstruktur, schnelle Entwicklungszyklen und ein vollständig responsives UI zu ermöglichen.
 
-## 🚀 Demo
+🤖 KI-Tool-Nutzung
 
-Diese Anwendung kann auf [StackBlitz](https://stackblitz.com) geöffnet werden. Laden Sie einfach alle Dateien hoch oder verlinken Sie das GitHub-Repository.
+KI-Tools (Cursor, ChatGPT, Claude) wurden genutzt für:
 
-## 📋 Features
+Code-Refactoring & Strukturierung einzelner Komponenten
 
-- **Hero-Bereich mit Spendenbarometer**: Visueller Fortschrittsbalken zeigt den aktuellen Spendenstand (4.200 € von 10.000 €)
-- **Spendenformular**: Vollständige Validierung mit klaren Fehlermeldungen
-  - Name (Pflichtfeld, min. 2 Zeichen)
-  - E-Mail (Pflichtfeld, E-Mail-Format-Validierung)
-  - Betrag (Pflichtfeld, Mindestbetrag 5 €)
-  - Newsletter-Checkbox (optional)
-  - Danke-Nachricht nach erfolgreicher Spende
-- **FAQ-Accordion**: Interaktiver Bereich mit 4 häufig gestellten Fragen aus JSON-Daten
+Vorschläge für UI-Verbesserungen
 
-## 🛠️ Technologie-Stack
+Unterstützung bei der Ausarbeitung der UX-Interaktionen
 
-- **Vue.js 3** mit Composition API
-- **Tailwind CSS** für Styling
-- **Vanilla JavaScript** (kein TypeScript)
-- **Vite** als Build-Tool
+🎨 UX-Überlegungen
 
-## 🎨 UX-Überlegungen
+Klare visuelle Hierarchie:
+Hero + Barometer als zentraler Fokus, klare Abgrenzung zum Spendenformular, FAQ am Ende.
 
-1. **Klare visuelle Hierarchie**: 
-   - Hero-Bereich mit auffälligem Gradient und großem Barometer
-   - Formular in separatem, gut strukturiertem Bereich
-   - FAQ am Ende für zusätzliche Informationen
-   - Konsistente Farbgebung (Blau als Hauptfarbe, Grün für Erfolg)
+Einfache Bedienbarkeit & Validierung:
+Sofortiges Feedback bei Eingabefehlern, deutliche Fehlermeldungen, Mindestbetrag-Hinweis.
 
-2. **Benutzerfreundliche Validierung**:
-   - Inline-Validierung bei Blur-Events
-   - Klare Fehlermeldungen in roter Farbe direkt unter den Feldern
-   - Visuelle Hervorhebung fehlerhafter Felder (roter Rahmen)
-   - Mindestbetrag-Hinweis für Transparenz
+Hohe Lesbarkeit bei Bildern:
+Dunkles Overlay für Textkontrast, harmonische Farben und ein konsistentes Button-Design.
 
-3. **Responsive Design**:
-   - Mobile-first Ansatz
-   - Flexible Layouts mit Tailwind's Grid-System
-   - Touch-freundliche Buttons und Formularelemente
-   - Angepasste Schriftgrößen für verschiedene Bildschirmgrößen
+🚀 Live-Demo
 
-## 📦 Installation
+StackBlitz:
+https://stackblitz.com/~/github.com/albsel/SLFHO
 
-```bash
+GitHub-Repository:
+https://github.com/albsel/SLFHO
+
+🔧 Lokale Entwicklung
 npm install
-```
-
-## 🏃 Entwicklung
-
-```bash
 npm run dev
-```
-
-Die Anwendung läuft dann auf `http://localhost:5173`
-
-## 🏗️ Build
-
-```bash
-npm run build
-```
-
-## 📁 Projektstruktur
-
-```
-SLFHO/
-├── src/
-│   ├── components/
-│   │   ├── HeroBarometer.vue
-│   │   ├── DonationForm.vue
-│   │   └── FAQ.vue
-│   ├── data/
-│   │   └── faq.json
-│   ├── App.vue
-│   ├── main.js
-│   └── style.css
-├── index.html
-├── package.json
-├── vite.config.js
-├── tailwind.config.js
-└── postcss.config.js
-```
-
-## 🤖 KI-Tool-Nutzung
-
-Diese Anwendung wurde mit Unterstützung von KI-Tools (Claude/Cursor) entwickelt. Die Architektur, Komponentenstruktur und UX-Entscheidungen wurden in Zusammenarbeit mit KI-Assistenten erstellt.
-
-## 📝 Funktionalität
-
-- ✅ Spendenbarometer aktualisiert sich dynamisch bei neuen Spenden
-- ✅ Vollständige Formularvalidierung mit klaren Fehlermeldungen
-- ✅ Danke-Nachricht nach erfolgreicher Spende (verschwindet nach 5 Sekunden)
-- ✅ Responsive Design für Desktop und Mobile
-- ✅ FAQ-Accordion mit Animationen
-- ✅ Alle Texte auf Deutsch
-
-## 🎯 Nächste Schritte (für Produktivumgebung)
-
-- Backend-Integration für echte Spendenverarbeitung
-- Payment-Gateway-Integration (z.B. Stripe, PayPal)
-- Datenbank für Spendenhistorie
-- E-Mail-Versand für Spendenbescheinigungen
-- Analytics-Integration
-- Accessibility-Verbesserungen (ARIA-Labels, Keyboard-Navigation)
-

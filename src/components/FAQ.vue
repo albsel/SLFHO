@@ -1,18 +1,32 @@
 <template>
-  <section class="py-section bg-gradient-to-b from-gray-50 to-white">
-    <div class="container max-w-content mx-auto">
+  <section id="faq-section" class="py-20 bg-white">
+    <div class="container">
       <div class="text-center mb-10">
-        <div class="inline-flex items-center justify-center w-16 h-16 bg-brand-primary/10 rounded-full mb-4">
-          <svg class="w-8 h-8 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+        <div
+          class="inline-flex items-center justify-center w-16 h-16 bg-brand-primary/10 rounded-full mb-4"
+        >
+          <svg
+            class="w-8 h-8 text-brand-primary"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+            />
           </svg>
         </div>
         <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-3">
           Häufig gestellte Fragen
         </h2>
-        <p class="text-gray-600">Alles, was Sie über unsere Spendenaktion wissen möchten</p>
+        <p class="text-gray-600">
+          Alles, was Sie über unsere Spendenaktion wissen möchten
+        </p>
       </div>
-      
+
       <div class="space-y-4">
         <div
           v-for="(item, index) in faqData"
@@ -23,7 +37,9 @@
             @click="toggleItem(index)"
             class="w-full px-6 py-5 text-left flex justify-between items-center hover:bg-brand-primary/5 transition-all duration-300 ease-in-out group"
           >
-            <span class="font-semibold text-gray-800 text-lg pr-4 group-hover:text-brand-primaryDark transition-colors duration-300 ease-in-out">
+            <span
+              class="font-semibold text-gray-800 text-lg pr-4 group-hover:text-brand-primaryDark transition-colors duration-300 ease-in-out"
+            >
               {{ item.question }}
             </span>
             <svg
@@ -33,10 +49,15 @@
               stroke="currentColor"
               viewBox="0 0 24 24"
             >
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M19 9l-7 7-7-7"
+              />
             </svg>
           </button>
-          
+
           <transition name="slide">
             <div
               v-show="openItems[index]"
@@ -52,14 +73,14 @@
 </template>
 
 <script setup>
-import { reactive } from 'vue'
-import faqData from '../data/faq.json'
+import { reactive } from "vue";
+import faqData from "../data/faq.json";
 
-const openItems = reactive({})
+const openItems = reactive({});
 
 const toggleItem = (index) => {
-  openItems[index] = !openItems[index]
-}
+  openItems[index] = !openItems[index];
+};
 </script>
 
 <style scoped>
@@ -82,4 +103,3 @@ const toggleItem = (index) => {
   @apply max-h-0 opacity-0 pt-0 pb-0;
 }
 </style>
-
